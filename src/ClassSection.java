@@ -10,6 +10,7 @@ public class ClassSection {
         this.subject = subject;
         this.capacity = capacity;
         this.yearLevel = yearLevel;
+        students = new ArrayList<>();
     }
 
     public String getSubject() {return subject;}
@@ -22,7 +23,7 @@ public class ClassSection {
     public void setYearLevel(int yearLevel) {this.yearLevel = yearLevel;}
 
     public void addStudent(Student student) {
-        students.add(student);
+        if (!students.contains(student) && student.getYearLevel() == yearLevel) {students.add(student);}
     }
     public void removeStudent(Student student) {
         students.remove(student);
@@ -32,5 +33,8 @@ public class ClassSection {
             if (x.equals(student)) return true;
         }
         return false;
+    }
+    public String toString() {
+        return "ClassSection{subject=\'" + subject + "\', capacity=" + capacity + ", students=" + students + "}";
     }
 }

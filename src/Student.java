@@ -4,7 +4,7 @@ public class Student {
     private String lastName;
     private int age;
     private int yearLevel;
-    private static int studentCount = 1;
+    private static int studentCount = 0;
 
     public Student(String firstName, String lastName, int age, int yearLevel) {
         this.firstName = firstName;
@@ -33,5 +33,7 @@ public class Student {
                 yearLevel == student.getYearLevel()) return true;
         return false;
     }
-
+    public String toString() {
+        return "Student{id=" + id + ", firstName=\'" + firstName + "\', lastName=\'" + lastName + "\', age=" + age + "}";
+    }
 }
